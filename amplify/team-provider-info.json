@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cocoashielddashboard-dev-203305-authRole",
+      "UnauthRoleArn": "arn:aws:iam::317932801427:role/amplify-cocoashielddashboard-dev-203305-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::317932801427:role/amplify-cocoashielddashboard-dev-203305-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-cocoashielddashboard-dev-203305-deployment",
+      "UnauthRoleName": "amplify-cocoashielddashboard-dev-203305-unauthRole",
+      "StackName": "amplify-cocoashielddashboard-dev-203305",
+      "StackId": "arn:aws:cloudformation:eu-north-1:317932801427:stack/amplify-cocoashielddashboard-dev-203305/62d0be20-6d2c-11ee-864c-0a69799be63a",
+      "AmplifyAppId": "d37kgvkesza9jt"
+    },
+    "categories": {
+      "auth": {
+        "CocoaShieldDashboard": {}
+      },
+      "storage": {
+        "cocoashielddashboardb8d24c7a": {
+          "bucketName": "azkam-test-04-10-23",
+          "region": "us-east-1"
+        }
+      }
+    }
+  }
+}
