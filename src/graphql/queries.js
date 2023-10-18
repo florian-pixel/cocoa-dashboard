@@ -10,6 +10,7 @@ export const getPHOTO = /* GraphQL */ `
       scannedAt
       isSafe
       plantationID
+      src
       createdAt
       updatedAt
       __typename
@@ -30,6 +31,7 @@ export const listPHOTOS = /* GraphQL */ `
         scannedAt
         isSafe
         plantationID
+        src
         createdAt
         updatedAt
         __typename

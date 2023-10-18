@@ -5,7 +5,7 @@ type PHOTO @model @auth(rules: [{allow: public}]) {
   scannedAt: AWSDate!
   isSafe: Boolean!
   plantationID: ID! @index(name: "byPLANTATION")
-  src: String
+  src: String!
 }
 
 type PLANTATION @model @auth(rules: [{allow: public}]) {
@@ -14,4 +14,3 @@ type PLANTATION @model @auth(rules: [{allow: public}]) {
   img: String
   PHOTOS: [PHOTO] @hasMany(indexName: "byPLANTATION", fields: ["id"])
 }
- 
