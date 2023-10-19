@@ -4,6 +4,7 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+export { default as Bannire } from "./Bannire";
 export { default as PLANTATIONCreateForm } from "./PLANTATIONCreateForm";
 export { default as PLANTATIONUpdateForm } from "./PLANTATIONUpdateForm";
 export { default as StandardCard } from "./StandardCard";
