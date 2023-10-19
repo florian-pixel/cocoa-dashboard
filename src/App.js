@@ -1,5 +1,6 @@
 //import logo from './logo.svg';
 import './App.css';
+import { withAuthenticator } from '@aws-amplify/ui-react'
 import { StandardCardCollection } from "./ui-components";
 
 function App() {
@@ -11,4 +12,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
