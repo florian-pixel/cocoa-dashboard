@@ -4,9 +4,21 @@ import { withAuthenticator } from '@aws-amplify/ui-react'
 import { StandardCardCollection } from "./ui-components";
 import logo from './assets/logoCocoaShield.png'
 import { Flex, Divider, Button } from '@aws-amplify/ui-react';
+import { Auth } from 'aws-amplify';
+
+
 
 
 function App() {
+
+	async function signOut() {
+		try {
+		  await Auth.signOut();
+		} catch (error) {
+		  console.log('error signing out: ', error);
+		}
+	  }
+
 	return (
 		<div className="App">
 			<Flex className='flex-content-head' direction="column">
@@ -31,6 +43,10 @@ function App() {
 					<Button size="large" loadingText="" onClick={() => alert('hello')}>
 						Statistiques
 					</Button>
+					<Button size="large" loadingText="" onClick={() => signOut()}>
+						Déconnexion
+					</Button>
+
 
 
 				</Flex>

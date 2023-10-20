@@ -27,9 +27,11 @@ export default function PLANTATIONUpdateForm(props) {
   const initialValues = {
     lib: "",
     img: "",
+    author: "",
   };
   const [lib, setLib] = React.useState(initialValues.lib);
   const [img, setImg] = React.useState(initialValues.img);
+  const [author, setAuthor] = React.useState(initialValues.author);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = pLANTATIONRecord
@@ -37,6 +39,7 @@ export default function PLANTATIONUpdateForm(props) {
       : initialValues;
     setLib(cleanValues.lib);
     setImg(cleanValues.img);
+    setAuthor(cleanValues.author);
     setErrors({});
   };
   const [pLANTATIONRecord, setPLANTATIONRecord] =
@@ -59,6 +62,7 @@ export default function PLANTATIONUpdateForm(props) {
   const validations = {
     lib: [],
     img: [],
+    author: [{ type: "Required" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -88,6 +92,7 @@ export default function PLANTATIONUpdateForm(props) {
         let modelFields = {
           lib: lib ?? null,
           img: img ?? null,
+          author,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -150,6 +155,7 @@ export default function PLANTATIONUpdateForm(props) {
             const modelFields = {
               lib: value,
               img,
+              author,
             };
             const result = onChange(modelFields);
             value = result?.lib ?? value;
@@ -175,6 +181,7 @@ export default function PLANTATIONUpdateForm(props) {
             const modelFields = {
               lib,
               img: value,
+              author,
             };
             const result = onChange(modelFields);
             value = result?.img ?? value;
@@ -188,6 +195,32 @@ export default function PLANTATIONUpdateForm(props) {
         errorMessage={errors.img?.errorMessage}
         hasError={errors.img?.hasError}
         {...getOverrideProps(overrides, "img")}
+      ></TextField>
+      <TextField
+        label="Author"
+        isRequired={true}
+        isReadOnly={false}
+        value={author}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              lib,
+              img,
+              author: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.author ?? value;
+          }
+          if (errors.author?.hasError) {
+            runValidationTasks("author", value);
+          }
+          setAuthor(value);
+        }}
+        onBlur={() => runValidationTasks("author", author)}
+        errorMessage={errors.author?.errorMessage}
+        hasError={errors.author?.hasError}
+        {...getOverrideProps(overrides, "author")}
       ></TextField>
       <Flex
         justifyContent="space-between"

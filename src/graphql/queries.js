@@ -13,6 +13,7 @@ export const getPHOTO = /* GraphQL */ `
       src
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -34,6 +35,7 @@ export const listPHOTOS = /* GraphQL */ `
         src
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -63,8 +65,10 @@ export const pHOTOSByPlantationID = /* GraphQL */ `
         scannedAt
         isSafe
         plantationID
+        src
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -82,6 +86,7 @@ export const getPLANTATION = /* GraphQL */ `
         nextToken
         __typename
       }
+      author
       createdAt
       updatedAt
       __typename
@@ -99,6 +104,7 @@ export const listPLANTATIONS = /* GraphQL */ `
         id
         lib
         img
+        author
         createdAt
         updatedAt
         __typename

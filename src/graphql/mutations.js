@@ -13,8 +13,10 @@ export const createPHOTO = /* GraphQL */ `
       scannedAt
       isSafe
       plantationID
+      src
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -31,8 +33,10 @@ export const updatePHOTO = /* GraphQL */ `
       scannedAt
       isSafe
       plantationID
+      src
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -49,8 +53,10 @@ export const deletePHOTO = /* GraphQL */ `
       scannedAt
       isSafe
       plantationID
+      src
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -68,6 +74,7 @@ export const createPLANTATION = /* GraphQL */ `
         nextToken
         __typename
       }
+      author
       createdAt
       updatedAt
       __typename
@@ -87,6 +94,7 @@ export const updatePLANTATION = /* GraphQL */ `
         nextToken
         __typename
       }
+      author
       createdAt
       updatedAt
       __typename
@@ -106,6 +114,7 @@ export const deletePLANTATION = /* GraphQL */ `
         nextToken
         __typename
       }
+      author
       createdAt
       updatedAt
       __typename

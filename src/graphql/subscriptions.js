@@ -2,46 +2,61 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreatePHOTO = /* GraphQL */ `
-  subscription OnCreatePHOTO($filter: ModelSubscriptionPHOTOFilterInput) {
-    onCreatePHOTO(filter: $filter) {
+  subscription OnCreatePHOTO(
+    $filter: ModelSubscriptionPHOTOFilterInput
+    $owner: String
+  ) {
+    onCreatePHOTO(filter: $filter, owner: $owner) {
       id
       name
       snappedAt
       scannedAt
       isSafe
       plantationID
+      src
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
 `;
 export const onUpdatePHOTO = /* GraphQL */ `
-  subscription OnUpdatePHOTO($filter: ModelSubscriptionPHOTOFilterInput) {
-    onUpdatePHOTO(filter: $filter) {
+  subscription OnUpdatePHOTO(
+    $filter: ModelSubscriptionPHOTOFilterInput
+    $owner: String
+  ) {
+    onUpdatePHOTO(filter: $filter, owner: $owner) {
       id
       name
       snappedAt
       scannedAt
       isSafe
       plantationID
+      src
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
 `;
 export const onDeletePHOTO = /* GraphQL */ `
-  subscription OnDeletePHOTO($filter: ModelSubscriptionPHOTOFilterInput) {
-    onDeletePHOTO(filter: $filter) {
+  subscription OnDeletePHOTO(
+    $filter: ModelSubscriptionPHOTOFilterInput
+    $owner: String
+  ) {
+    onDeletePHOTO(filter: $filter, owner: $owner) {
       id
       name
       snappedAt
       scannedAt
       isSafe
       plantationID
+      src
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -49,8 +64,9 @@ export const onDeletePHOTO = /* GraphQL */ `
 export const onCreatePLANTATION = /* GraphQL */ `
   subscription OnCreatePLANTATION(
     $filter: ModelSubscriptionPLANTATIONFilterInput
+    $author: String
   ) {
-    onCreatePLANTATION(filter: $filter) {
+    onCreatePLANTATION(filter: $filter, author: $author) {
       id
       lib
       img
@@ -58,6 +74,7 @@ export const onCreatePLANTATION = /* GraphQL */ `
         nextToken
         __typename
       }
+      author
       createdAt
       updatedAt
       __typename
@@ -67,8 +84,9 @@ export const onCreatePLANTATION = /* GraphQL */ `
 export const onUpdatePLANTATION = /* GraphQL */ `
   subscription OnUpdatePLANTATION(
     $filter: ModelSubscriptionPLANTATIONFilterInput
+    $author: String
   ) {
-    onUpdatePLANTATION(filter: $filter) {
+    onUpdatePLANTATION(filter: $filter, author: $author) {
       id
       lib
       img
@@ -76,6 +94,7 @@ export const onUpdatePLANTATION = /* GraphQL */ `
         nextToken
         __typename
       }
+      author
       createdAt
       updatedAt
       __typename
@@ -85,8 +104,9 @@ export const onUpdatePLANTATION = /* GraphQL */ `
 export const onDeletePLANTATION = /* GraphQL */ `
   subscription OnDeletePLANTATION(
     $filter: ModelSubscriptionPLANTATIONFilterInput
+    $author: String
   ) {
-    onDeletePLANTATION(filter: $filter) {
+    onDeletePLANTATION(filter: $filter, author: $author) {
       id
       lib
       img
@@ -94,6 +114,7 @@ export const onDeletePLANTATION = /* GraphQL */ `
         nextToken
         __typename
       }
+      author
       createdAt
       updatedAt
       __typename
