@@ -63,12 +63,27 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": [],
-    "triggers": {},
+    "dependsOn": [
+      {
+        "category": "function",
+        "resourceName": "cocoashieldPreSignup",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      }
+    ],
+    "triggers": {
+      "PreSignup": [
+        "custom"
+      ]
+    },
     "hostedUI": false,
     "parentStack": {
       "Ref": "AWS::StackId"
     },
-    "permissions": []
+    "permissions": [],
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PreSignUp\",\n    \"lambdaFunctionName\": \"cocoashieldPreSignup\"\n  }\n]"
   }
 }

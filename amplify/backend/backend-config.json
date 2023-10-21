@@ -25,7 +25,17 @@
   "auth": {
     "cocoashield": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "cocoashieldPreSignup",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -57,6 +67,22 @@
     }
   },
   "function": {
+    "cocoashieldPreSignup": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "cocoashield"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "cocoashielde2cdc72d": {
       "build": true,
       "dependsOn": [
@@ -75,6 +101,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_cocoashieldPreSignup_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "cocoashieldPreSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_cocoashieldPreSignup_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "cocoashieldPreSignup"
+        }
+      ]
+    },
     "AMPLIFY_function_cocoashielde2cdc72d_deploymentBucketName": {
       "usedBy": [
         {

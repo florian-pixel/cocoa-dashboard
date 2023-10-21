@@ -18,6 +18,13 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
+    "cocoashieldPreSignup": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "cocoashielde2cdc72d": {
       "Arn": "string",
       "LambdaExecutionRole": "string",

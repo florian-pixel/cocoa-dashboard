@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-cocoashield-staging-230605-unauthRole",
       "StackName": "amplify-cocoashield-staging-230605",
       "StackId": "arn:aws:cloudformation:us-east-1:317932801427:stack/amplify-cocoashield-staging-230605/3f98a120-6f9d-11ee-988d-125e2c4ca24f",
-      "AmplifyAppId": "d3x6w7cjskycm"
+      "AmplifyAppId": "d3x6w7cjskycm",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-cocoashield-staging-230605-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
@@ -19,6 +20,10 @@
         "cocoashielde2cdc72d": {
           "deploymentBucketName": "amplify-cocoashield-staging-230605-deployment",
           "s3Key": "amplify-builds/cocoashielde2cdc72d-697038624275554c615a-build.zip"
+        },
+        "cocoashieldPreSignup": {
+          "deploymentBucketName": "amplify-cocoashield-staging-230605-deployment",
+          "s3Key": "amplify-builds/cocoashieldPreSignup-78452b7a42387279772b-build.zip"
         }
       },
       "api": {
