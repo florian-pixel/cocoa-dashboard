@@ -15,19 +15,16 @@ export declare type ValidationFunction<T> = (value: T, validationResponse: Valid
 export declare type PLANTATIONUpdateFormInputValues = {
     lib?: string;
     img?: string;
-    author?: string;
 };
 export declare type PLANTATIONUpdateFormValidationValues = {
     lib?: ValidationFunction<string>;
     img?: ValidationFunction<string>;
-    author?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type PLANTATIONUpdateFormOverridesProps = {
     PLANTATIONUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
     lib?: PrimitiveOverrideProps<TextFieldProps>;
     img?: PrimitiveOverrideProps<TextFieldProps>;
-    author?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type PLANTATIONUpdateFormProps = React.PropsWithChildren<{
     overrides?: PLANTATIONUpdateFormOverridesProps | undefined | null;

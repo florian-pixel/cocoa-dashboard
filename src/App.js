@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
 import { withAuthenticator } from '@aws-amplify/ui-react'
-import { StandardCardCollection } from "./ui-components";
+// import { StandardCardCollection } from "./ui-components";
 import logo from './assets/logoCocoaShield.png'
 import { Flex, Divider, Button } from '@aws-amplify/ui-react';
 import { Auth } from 'aws-amplify';
@@ -10,6 +10,16 @@ import { Auth } from 'aws-amplify';
 
 
 function App() {
+	async function listUser() {
+		try {
+			await console.log(Auth.currentAuthenticatedUser({bypassCache: true}))
+
+		}
+		catch (error){
+			console.log("error getting list: ", error)
+		}
+	}
+	// console.log('List user: ', Auth.currentAuthenticatedUser({bypassCache: true}))
 
 	async function signOut() {
 		try {
@@ -17,7 +27,7 @@ function App() {
 		} catch (error) {
 		  console.log('error signing out: ', error);
 		}
-	  }
+	}
 
 	return (
 		<div className="App">
@@ -46,6 +56,10 @@ function App() {
 					<Button size="large" loadingText="" onClick={() => signOut()}>
 						Déconnexion
 					</Button>
+					<Button size="large" loadingText="" onClick={() => listUser()}>
+						List User
+					</Button>
+
 
 
 
@@ -53,7 +67,7 @@ function App() {
 				<Divider orientation="vertical"  />
 				<Flex className='flex-content-display' >
 					{/* <div> */}
-						<StandardCardCollection />
+						{/* <StandardCardCollection /> */}
 					{/* </div> */}
 				</Flex>
 			</Flex>

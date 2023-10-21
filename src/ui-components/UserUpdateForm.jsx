@@ -10,12 +10,12 @@ import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { fetchByPath, validateField } from "./utils";
 import { API } from "aws-amplify";
-import { getPLANTATION } from "../graphql/queries";
-import { updatePLANTATION } from "../graphql/mutations";
-export default function PLANTATIONUpdateForm(props) {
+import { getUser } from "../graphql/queries";
+import { updateUser } from "../graphql/mutations";
+export default function UserUpdateForm(props) {
   const {
     id: idProp,
-    pLANTATION: pLANTATIONModelProp,
+    user: userModelProp,
     onSuccess,
     onError,
     onSubmit,
@@ -25,40 +25,35 @@ export default function PLANTATIONUpdateForm(props) {
     ...rest
   } = props;
   const initialValues = {
-    lib: "",
-    img: "",
+    email: "",
   };
-  const [lib, setLib] = React.useState(initialValues.lib);
-  const [img, setImg] = React.useState(initialValues.img);
+  const [email, setEmail] = React.useState(initialValues.email);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
-    const cleanValues = pLANTATIONRecord
-      ? { ...initialValues, ...pLANTATIONRecord }
+    const cleanValues = userRecord
+      ? { ...initialValues, ...userRecord }
       : initialValues;
-    setLib(cleanValues.lib);
-    setImg(cleanValues.img);
+    setEmail(cleanValues.email);
     setErrors({});
   };
-  const [pLANTATIONRecord, setPLANTATIONRecord] =
-    React.useState(pLANTATIONModelProp);
+  const [userRecord, setUserRecord] = React.useState(userModelProp);
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
         ? (
             await API.graphql({
-              query: getPLANTATION.replaceAll("__typename", ""),
+              query: getUser.replaceAll("__typename", ""),
               variables: { id: idProp },
             })
-          )?.data?.getPLANTATION
-        : pLANTATIONModelProp;
-      setPLANTATIONRecord(record);
+          )?.data?.getUser
+        : userModelProp;
+      setUserRecord(record);
     };
     queryData();
-  }, [idProp, pLANTATIONModelProp]);
-  React.useEffect(resetStateValues, [pLANTATIONRecord]);
+  }, [idProp, userModelProp]);
+  React.useEffect(resetStateValues, [userRecord]);
   const validations = {
-    lib: [],
-    img: [],
+    email: [{ type: "Required" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -86,8 +81,7 @@ export default function PLANTATIONUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          lib: lib ?? null,
-          img: img ?? null,
+          email,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -118,10 +112,10 @@ export default function PLANTATIONUpdateForm(props) {
             }
           });
           await API.graphql({
-            query: updatePLANTATION.replaceAll("__typename", ""),
+            query: updateUser.replaceAll("__typename", ""),
             variables: {
               input: {
-                id: pLANTATIONRecord.id,
+                id: userRecord.id,
                 ...modelFields,
               },
             },
@@ -136,58 +130,32 @@ export default function PLANTATIONUpdateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "PLANTATIONUpdateForm")}
+      {...getOverrideProps(overrides, "UserUpdateForm")}
       {...rest}
     >
       <TextField
-        label="Lib"
-        isRequired={false}
+        label="Email"
+        isRequired={true}
         isReadOnly={false}
-        value={lib}
+        value={email}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              lib: value,
-              img,
+              email: value,
             };
             const result = onChange(modelFields);
-            value = result?.lib ?? value;
+            value = result?.email ?? value;
           }
-          if (errors.lib?.hasError) {
-            runValidationTasks("lib", value);
+          if (errors.email?.hasError) {
+            runValidationTasks("email", value);
           }
-          setLib(value);
+          setEmail(value);
         }}
-        onBlur={() => runValidationTasks("lib", lib)}
-        errorMessage={errors.lib?.errorMessage}
-        hasError={errors.lib?.hasError}
-        {...getOverrideProps(overrides, "lib")}
-      ></TextField>
-      <TextField
-        label="Img"
-        isRequired={false}
-        isReadOnly={false}
-        value={img}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              lib,
-              img: value,
-            };
-            const result = onChange(modelFields);
-            value = result?.img ?? value;
-          }
-          if (errors.img?.hasError) {
-            runValidationTasks("img", value);
-          }
-          setImg(value);
-        }}
-        onBlur={() => runValidationTasks("img", img)}
-        errorMessage={errors.img?.errorMessage}
-        hasError={errors.img?.hasError}
-        {...getOverrideProps(overrides, "img")}
+        onBlur={() => runValidationTasks("email", email)}
+        errorMessage={errors.email?.errorMessage}
+        hasError={errors.email?.hasError}
+        {...getOverrideProps(overrides, "email")}
       ></TextField>
       <Flex
         justifyContent="space-between"
@@ -200,7 +168,7 @@ export default function PLANTATIONUpdateForm(props) {
             event.preventDefault();
             resetStateValues();
           }}
-          isDisabled={!(idProp || pLANTATIONModelProp)}
+          isDisabled={!(idProp || userModelProp)}
           {...getOverrideProps(overrides, "ResetButton")}
         ></Button>
         <Flex
@@ -212,7 +180,7 @@ export default function PLANTATIONUpdateForm(props) {
             type="submit"
             variation="primary"
             isDisabled={
-              !(idProp || pLANTATIONModelProp) ||
+              !(idProp || userModelProp) ||
               Object.values(errors).some((e) => e?.hasError)
             }
             {...getOverrideProps(overrides, "SubmitButton")}

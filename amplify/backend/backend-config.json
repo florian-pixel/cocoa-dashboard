@@ -1,26 +1,12 @@
 {
   "api": {
-    "CocoaShieldDashboard": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "CocoaShieldDashboard"
-        }
-      ],
+    "cocoashield": {
+      "dependsOn": [],
       "output": {
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
               "authenticationType": "AWS_IAM"
-            },
-            {
-              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-              "userPoolConfig": {
-                "userPoolId": "authCocoaShieldDashboard"
-              }
             }
           ],
           "defaultAuthentication": {
@@ -37,7 +23,7 @@
     }
   },
   "auth": {
-    "CocoaShieldDashboard": {
+    "cocoashield": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -56,7 +42,6 @@
         },
         "signupAttributes": [
           "EMAIL",
-          "PHONE_NUMBER",
           "NAME"
         ],
         "socialProviders": [],
@@ -71,30 +56,40 @@
       "service": "Cognito"
     }
   },
+  "function": {
+    "cocoashielde2cdc72d": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "cocoashield"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "parameters": {
-    "AMPLIFY_storage_cocoashielddashboardb8d24c7a_bucketName": {
+    "AMPLIFY_function_cocoashielde2cdc72d_deploymentBucketName": {
       "usedBy": [
         {
-          "category": "storage",
-          "resourceName": "cocoashielddashboardb8d24c7a"
+          "category": "function",
+          "resourceName": "cocoashielde2cdc72d"
         }
       ]
     },
-    "AMPLIFY_storage_cocoashielddashboardb8d24c7a_region": {
+    "AMPLIFY_function_cocoashielde2cdc72d_s3Key": {
       "usedBy": [
         {
-          "category": "storage",
-          "resourceName": "cocoashielddashboardb8d24c7a"
+          "category": "function",
+          "resourceName": "cocoashielde2cdc72d"
         }
       ]
-    }
-  },
-  "storage": {
-    "cocoashielddashboardb8d24c7a": {
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
-      "service": "S3",
-      "serviceType": "imported"
     }
   }
 }
