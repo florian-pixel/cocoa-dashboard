@@ -9,7 +9,7 @@ import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Icon, Image, Text, View } from "@aws-amplify/ui-react";
 export default function DetailsImagePlante(props) {
-  const { pHOTO, overrides, ...rest } = props;
+  const { overrides, ...rest } = props;
   return (
     <View
       width="653px"
@@ -61,7 +61,7 @@ export default function DetailsImagePlante(props) {
       ></Image>
       <Text
         fontFamily="Roboto"
-        fontSize="24px"
+        fontSize="15px"
         fontWeight="700"
         color="rgba(0,0,0,1)"
         lineHeight="20px"
@@ -69,7 +69,7 @@ export default function DetailsImagePlante(props) {
         display="block"
         direction="column"
         justifyContent="unset"
-        width="unset"
+        width="207px"
         height="unset"
         gap="unset"
         alignItems="unset"
@@ -77,10 +77,10 @@ export default function DetailsImagePlante(props) {
         top="4.52%"
         bottom="91.18%"
         left="44.41%"
-        right="34.61%"
+        right="23.89%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={pHOTO?.name}
+        children="Image Name"
         {...getOverrideProps(overrides, "Image Name")}
       ></Text>
       <Text
@@ -93,7 +93,7 @@ export default function DetailsImagePlante(props) {
         display="block"
         direction="column"
         justifyContent="unset"
-        width="unset"
+        width="185px"
         height="unset"
         gap="unset"
         alignItems="unset"
@@ -101,7 +101,7 @@ export default function DetailsImagePlante(props) {
         top="43.66%"
         bottom="52.04%"
         left="44.41%"
-        right="43.8%"
+        right="27.26%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
         children="Commentaire"
@@ -109,7 +109,7 @@ export default function DetailsImagePlante(props) {
       ></Text>
       <View
         padding="0px 0px 0px 0px"
-        width="128px"
+        width="107px"
         height="29px"
         display="block"
         gap="unset"
@@ -118,12 +118,12 @@ export default function DetailsImagePlante(props) {
         position="absolute"
         top="3.66%"
         bottom="90.11%"
-        left="77.34%"
+        left="80.55%"
         right="3.06%"
         {...getOverrideProps(overrides, "Group 1")}
       >
         <View
-          width="128px"
+          width="107px"
           height="29px"
           display="block"
           gap="unset"
@@ -150,7 +150,7 @@ export default function DetailsImagePlante(props) {
           direction="column"
           justifyContent="unset"
           letterSpacing="0.01px"
-          width="112px"
+          width="93.63px"
           height="21px"
           gap="unset"
           alignItems="unset"
@@ -161,7 +161,7 @@ export default function DetailsImagePlante(props) {
           right="6.25%"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children={pHOTO?.isSafe == true ? "Sain" : "Infect\u00E9"}
+          children="Sain"
           {...getOverrideProps(overrides, "Sain")}
         ></Text>
       </View>
@@ -183,34 +183,10 @@ export default function DetailsImagePlante(props) {
         top="11.18%"
         bottom="84.52%"
         left="44.41%"
-        right="35.68%"
-        padding="0px 0px 0px 0px"
-        whiteSpace="pre-wrap"
-        children={`${""}${"Scann\u00E9 le "}${pHOTO?.scannedAt}`}
-        {...getOverrideProps(overrides, "Scann\u00E9 le 12/03/2014")}
-      ></Text>
-      <Text
-        fontFamily="Lato"
-        fontSize="13px"
-        fontWeight="400"
-        color="rgba(0,0,0,1)"
-        lineHeight="20px"
-        textAlign="left"
-        display="block"
-        direction="column"
-        justifyContent="unset"
-        width="unset"
-        height="unset"
-        gap="unset"
-        alignItems="unset"
-        position="absolute"
-        top="11.18%"
-        bottom="84.52%"
-        left="44.41%"
         right="29.71%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={`${"Scann\u00E9 le "}${pHOTO?.scannedAt}`}
+        children="Scanné le 12/03/2014 17h14"
         {...getOverrideProps(overrides, "Scann\u00E9 le 12/03/2014 17h14")}
       ></Text>
       <Text
@@ -248,7 +224,7 @@ export default function DetailsImagePlante(props) {
         display="block"
         direction="column"
         justifyContent="unset"
-        width="unset"
+        width="225px"
         height="unset"
         gap="unset"
         alignItems="unset"
@@ -256,10 +232,10 @@ export default function DetailsImagePlante(props) {
         top="15.48%"
         bottom="80.22%"
         left="61.41%"
-        right="21.13%"
+        right="4.13%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={pHOTO?.agentOperateur}
+        children="Coulibaly Aboubacar"
         {...getOverrideProps(overrides, "Coulibaly Aboubacar")}
       ></Text>
       <Icon
@@ -344,19 +320,19 @@ export default function DetailsImagePlante(props) {
           fontWeight="700"
           color="rgba(0,0,0,1)"
           lineHeight="20px"
-          textAlign="left"
+          textAlign="center"
           display="block"
           direction="column"
           justifyContent="unset"
-          width="unset"
+          width="93px"
           height="unset"
           gap="unset"
           alignItems="unset"
           position="absolute"
           top="8.33%"
           bottom="8.33%"
-          left="28.04%"
-          right="28.04%"
+          left="6.54%"
+          right="6.54%"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="Envoyer"

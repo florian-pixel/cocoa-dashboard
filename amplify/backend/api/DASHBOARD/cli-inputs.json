@@ -1,7 +1,7 @@
 {
   "version": 1,
   "serviceConfiguration": {
-    "apiName": "cocoashield",
+    "apiName": "DASHBOARD",
     "serviceName": "AppSync",
     "defaultAuthType": {
       "mode": "API_KEY",

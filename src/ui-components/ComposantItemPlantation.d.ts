@@ -6,12 +6,11 @@
 
 import * as React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { IconProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { IconProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ComposantItemPlantationOverridesProps = {
     ComposantItemPlantation?: PrimitiveOverrideProps<ViewProps>;
     "Rectangle 2"?: PrimitiveOverrideProps<ViewProps>;
-    "0001 1"?: PrimitiveOverrideProps<ImageProps>;
     "Nom de la plantation"?: PrimitiveOverrideProps<TextProps>;
     "Dernier Scan : 12/10/2023"?: PrimitiveOverrideProps<TextProps>;
     "Nombre de plants infect\u00E9s : 60 / 200"?: PrimitiveOverrideProps<TextProps>;
@@ -19,7 +18,7 @@ export declare type ComposantItemPlantationOverridesProps = {
     "Line 1"?: PrimitiveOverrideProps<IconProps>;
 } & EscapeHatchProps;
 export declare type ComposantItemPlantationProps = React.PropsWithChildren<Partial<ViewProps> & {
-    pLANTATION?: any;
+    plantation?: any;
 } & {
     overrides?: ComposantItemPlantationOverridesProps | undefined | null;
 }>;

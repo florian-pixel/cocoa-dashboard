@@ -1,33 +1,29 @@
 {
-  "staging": {
+  "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-cocoashield-staging-230605-authRole",
-      "UnauthRoleArn": "arn:aws:iam::317932801427:role/amplify-cocoashield-staging-230605-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::317932801427:role/amplify-cocoashield-staging-230605-authRole",
+      "AuthRoleName": "amplify-dashboard-dev-163211-authRole",
+      "UnauthRoleArn": "arn:aws:iam::317932801427:role/amplify-dashboard-dev-163211-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::317932801427:role/amplify-dashboard-dev-163211-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-cocoashield-staging-230605-deployment",
-      "UnauthRoleName": "amplify-cocoashield-staging-230605-unauthRole",
-      "StackName": "amplify-cocoashield-staging-230605",
-      "StackId": "arn:aws:cloudformation:us-east-1:317932801427:stack/amplify-cocoashield-staging-230605/3f98a120-6f9d-11ee-988d-125e2c4ca24f",
-      "AmplifyAppId": "d3x6w7cjskycm",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-cocoashield-staging-230605-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+      "DeploymentBucketName": "amplify-dashboard-dev-163211-deployment",
+      "UnauthRoleName": "amplify-dashboard-dev-163211-unauthRole",
+      "StackName": "amplify-dashboard-dev-163211",
+      "StackId": "arn:aws:cloudformation:us-east-1:317932801427:stack/amplify-dashboard-dev-163211/6517b390-702f-11ee-a910-0ad0fd9eb315",
+      "AmplifyAppId": "dq22hzs8124ur",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-dashboard-dev-163211-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "cocoashield": {}
+        "DASHBOARD": {}
       },
       "function": {
-        "cocoashielde2cdc72d": {
-          "deploymentBucketName": "amplify-cocoashield-staging-230605-deployment",
-          "s3Key": "amplify-builds/cocoashielde2cdc72d-697038624275554c615a-build.zip"
-        },
-        "cocoashieldPreSignup": {
-          "deploymentBucketName": "amplify-cocoashield-staging-230605-deployment",
-          "s3Key": "amplify-builds/cocoashieldPreSignup-78452b7a42387279772b-build.zip"
+        "DASHBOARDPreSignup": {
+          "deploymentBucketName": "amplify-dashboard-dev-163211-deployment",
+          "s3Key": "amplify-builds/DASHBOARDPreSignup-67447765535863366559-build.zip"
         }
       },
       "api": {
-        "cocoashield": {}
+        "DASHBOARD": {}
       }
     }
   }

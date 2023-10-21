@@ -42,17 +42,17 @@
     "env": {
       "Type": "String"
     },
-    "apicocoashieldGraphQLAPIIdOutput": {
+    "apiDASHBOARDGraphQLAPIIdOutput": {
       "Type": "String",
-      "Default": "apicocoashieldGraphQLAPIIdOutput"
+      "Default": "apiDASHBOARDGraphQLAPIIdOutput"
     },
-    "apicocoashieldGraphQLAPIEndpointOutput": {
+    "apiDASHBOARDGraphQLAPIEndpointOutput": {
       "Type": "String",
-      "Default": "apicocoashieldGraphQLAPIEndpointOutput"
+      "Default": "apiDASHBOARDGraphQLAPIEndpointOutput"
     },
-    "apicocoashieldGraphQLAPIKeyOutput": {
+    "apiDASHBOARDGraphQLAPIKeyOutput": {
       "Type": "String",
-      "Default": "apicocoashieldGraphQLAPIKeyOutput"
+      "Default": "apiDASHBOARDGraphQLAPIKeyOutput"
     },
     "deploymentBucketName": {
       "Type": "String"
@@ -83,12 +83,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "cocoashieldPreSignup",
+            "DASHBOARDPreSignup",
             {
               "Fn::Join": [
                 "",
                 [
-                  "cocoashieldPreSignup",
+                  "DASHBOARDPreSignup",
                   "-",
                   {
                     "Ref": "env"
@@ -115,14 +115,14 @@
             "DOMAINBLACKLIST": {
               "Ref": "DOMAINBLACKLIST"
             },
-            "API_COCOASHIELD_GRAPHQLAPIIDOUTPUT": {
-              "Ref": "apicocoashieldGraphQLAPIIdOutput"
+            "API_DASHBOARD_GRAPHQLAPIIDOUTPUT": {
+              "Ref": "apiDASHBOARDGraphQLAPIIdOutput"
             },
-            "API_COCOASHIELD_GRAPHQLAPIENDPOINTOUTPUT": {
-              "Ref": "apicocoashieldGraphQLAPIEndpointOutput"
+            "API_DASHBOARD_GRAPHQLAPIENDPOINTOUTPUT": {
+              "Ref": "apiDASHBOARDGraphQLAPIEndpointOutput"
             },
-            "API_COCOASHIELD_GRAPHQLAPIKEYOUTPUT": {
-              "Ref": "apicocoashieldGraphQLAPIKeyOutput"
+            "API_DASHBOARD_GRAPHQLAPIKEYOUTPUT": {
+              "Ref": "apiDASHBOARDGraphQLAPIKeyOutput"
             }
           }
         },
@@ -150,12 +150,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "cocoashieldPreSignup",
+            "DASHBOARDPreSignup",
             {
               "Fn::Join": [
                 "",
                 [
-                  "cocoashieldPreSignup",
+                  "DASHBOARDPreSignup",
                   "-",
                   {
                     "Ref": "env"
@@ -261,7 +261,7 @@
                       },
                       ":apis/",
                       {
-                        "Ref": "apicocoashieldGraphQLAPIIdOutput"
+                        "Ref": "apiDASHBOARDGraphQLAPIIdOutput"
                       },
                       "/types/Mutation/*"
                     ]

@@ -7,12 +7,12 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Icon, Image, Text, View } from "@aws-amplify/ui-react";
+import { Icon, Text, View } from "@aws-amplify/ui-react";
 export default function ComposantItemPlantation(props) {
-  const { pLANTATION, overrides, ...rest } = props;
+  const { plantation, overrides, ...rest } = props;
   return (
     <View
-      width="536px"
+      width="280px"
       height="252px"
       display="block"
       gap="unset"
@@ -24,7 +24,7 @@ export default function ComposantItemPlantation(props) {
       {...rest}
     >
       <View
-        width="262px"
+        width="280px"
         height="252px"
         display="block"
         gap="unset"
@@ -33,7 +33,7 @@ export default function ComposantItemPlantation(props) {
         position="absolute"
         top="0%"
         bottom="0%"
-        left="51.12%"
+        left="0%"
         right="0%"
         border="1px SOLID rgba(235,219,219,1)"
         borderRadius="0px 10px 10px 0px"
@@ -41,24 +41,6 @@ export default function ComposantItemPlantation(props) {
         backgroundColor="rgba(255,255,255,1)"
         {...getOverrideProps(overrides, "Rectangle 2")}
       ></View>
-      <Image
-        width="51.12%"
-        height="100%"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
-        position="absolute"
-        top="0%"
-        bottom="0%"
-        left="0%"
-        right="48.88%"
-        border="1px SOLID rgba(235,219,219,1)"
-        borderRadius="10px 0px 0px 10px"
-        padding="0px 0px 0px 0px"
-        objectFit="cover"
-        {...getOverrideProps(overrides, "0001 1")}
-      ></Image>
       <Text
         fontFamily="Roboto"
         fontSize="24px"
@@ -69,18 +51,18 @@ export default function ComposantItemPlantation(props) {
         display="block"
         direction="column"
         justifyContent="unset"
-        width="unset"
+        width="245px"
         height="unset"
         gap="unset"
         alignItems="unset"
         position="absolute"
         top="8.33%"
         bottom="80.56%"
-        left="53.73%"
-        right="4.48%"
+        left="2.86%"
+        right="9.64%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={pLANTATION?.lib}
+        children={plantation?.lib}
         {...getOverrideProps(overrides, "Nom de la plantation")}
       ></Text>
       <Text
@@ -93,18 +75,18 @@ export default function ComposantItemPlantation(props) {
         display="block"
         direction="column"
         justifyContent="unset"
-        width="unset"
-        height="unset"
+        width="190.67px"
+        height="14px"
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="90.87%"
-        bottom="2.38%"
-        left="67.16%"
-        right="1.49%"
+        top="86.11%"
+        bottom="8.33%"
+        left="2.99%"
+        right="28.92%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Dernier Scan : 12/10/2023"
+        children={plantation?.updatedAt}
         {...getOverrideProps(overrides, "Dernier Scan : 12/10/2023")}
       ></Text>
       <Text
@@ -117,18 +99,18 @@ export default function ComposantItemPlantation(props) {
         display="block"
         direction="column"
         justifyContent="unset"
-        width="unset"
+        width="257.01px"
         height="unset"
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="33.33%"
-        bottom="59.92%"
-        left="53.73%"
-        right="4.1%"
+        top="40.08%"
+        bottom="53.17%"
+        left="2.99%"
+        right="5.22%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Nombre de plants infectés : 60 / 200"
+        children={plantation?.nombreInfectes}
         {...getOverrideProps(
           overrides,
           "Nombre de plants infect\u00E9s : 60 / 200"
@@ -144,27 +126,27 @@ export default function ComposantItemPlantation(props) {
         display="block"
         direction="column"
         justifyContent="unset"
-        width="unset"
+        width="132.69px"
         height="unset"
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="23.81%"
-        bottom="69.44%"
-        left="53.73%"
-        right="24.44%"
+        top="31.35%"
+        bottom="61.9%"
+        left="2.99%"
+        right="49.63%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={`${"Superficie : "}${pLANTATION?.superficie}`}
+        children={plantation?.superficie}
         {...getOverrideProps(overrides, "Superficie : 22Km2")}
       ></Text>
       <Icon
-        width="229px"
+        width="218px"
         height="0px"
-        viewBox={{ minX: 0, minY: 0, width: 229, height: 1 }}
+        viewBox={{ minX: 0, minY: 0, width: 218, height: 1 }}
         paths={[
           {
-            d: "M0 0L229 0L229 -1L0 -1L0 0Z",
+            d: "M0 0L218 0L218 -1L0 -1L0 0Z",
             stroke: "rgba(0,0,0,0.5)",
             fillRule: "nonzero",
             strokeWidth: 1,
@@ -175,10 +157,10 @@ export default function ComposantItemPlantation(props) {
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="21.03%"
-        bottom="78.97%"
-        left="53.73%"
-        right="3.54%"
+        top="24.6%"
+        bottom="75.4%"
+        left="2.86%"
+        right="19.29%"
         {...getOverrideProps(overrides, "Line 1")}
       ></Icon>
     </View>

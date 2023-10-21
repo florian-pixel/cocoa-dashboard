@@ -1,24 +1,39 @@
 //import logo from './logo.svg';
 import './App.css';
 import { withAuthenticator } from '@aws-amplify/ui-react'
-// import { StandardCardCollection } from "./ui-components";
+import { ComposantItemPlantation } from "./ui-components";
 import logo from './assets/logoCocoaShield.png'
 import { Flex, Divider, Button } from '@aws-amplify/ui-react';
 import { Auth } from 'aws-amplify';
+import { useAuth } from "@aws-amplify/auth";
 
 
 
 
 function App() {
-	async function listUser() {
-		try {
-			await console.log(Auth.currentAuthenticatedUser({bypassCache: true}))
+	const { user } = useAuth();
 
-		}
-		catch (error){
-			console.log("error getting list: ", error)
-		}
-	}
+	const plantations = useQuery(
+		"plantations",
+		(query) => query.where({ owner: user.username }),
+	);
+
+
+
+	// async function user() {
+	// 	try {
+
+	// 		await Auth.currentAuthenticatedUser()
+	// 		.then((obj) => {
+	// 			return obj.attributes.name
+	// 		})
+
+
+	// 	}
+	// 	catch (error){
+	// 		console.log("error getting list: ", error)
+	// 	}
+	// }
 	// console.log('List user: ', Auth.currentAuthenticatedUser({bypassCache: true}))
 
 	async function signOut() {
@@ -35,6 +50,7 @@ function App() {
 				{/* <Text>Before</Text> */}
 				<img className='logo' src={logo} alt="" />
 				<Divider />
+				Bonjour {}
 			</Flex>
 			<div>
 			<br />
@@ -56,19 +72,18 @@ function App() {
 					<Button size="large" loadingText="" onClick={() => signOut()}>
 						Déconnexion
 					</Button>
-					<Button size="large" loadingText="" onClick={() => listUser()}>
-						List User
-					</Button>
-
 
 
 
 				</Flex>
 				<Divider orientation="vertical"  />
 				<Flex className='flex-content-display' >
-					{/* <div> */}
-						{/* <StandardCardCollection /> */}
-					{/* </div> */}
+					<div>
+					{
+						plantations.items.map((plantation) => (
+        				<ComposantItemPlantation key={plantation.id} plantation={plantation} />
+     				))}
+					</div>
 				</Flex>
 			</Flex>
 

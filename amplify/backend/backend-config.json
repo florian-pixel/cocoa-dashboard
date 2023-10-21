@@ -1,6 +1,6 @@
 {
   "api": {
-    "cocoashield": {
+    "DASHBOARD": {
       "dependsOn": [],
       "output": {
         "authConfig": {
@@ -23,7 +23,7 @@
     }
   },
   "auth": {
-    "cocoashield": {
+    "DASHBOARD": {
       "customAuth": false,
       "dependsOn": [
         {
@@ -32,7 +32,7 @@
             "Name"
           ],
           "category": "function",
-          "resourceName": "cocoashieldPreSignup",
+          "resourceName": "DASHBOARDPreSignup",
           "triggerProvider": "Cognito"
         }
       ],
@@ -67,7 +67,7 @@
     }
   },
   "function": {
-    "cocoashieldPreSignup": {
+    "DASHBOARDPreSignup": {
       "build": true,
       "dependsOn": [
         {
@@ -77,23 +77,7 @@
             "GraphQLAPIKeyOutput"
           ],
           "category": "api",
-          "resourceName": "cocoashield"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "cocoashielde2cdc72d": {
-      "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput",
-            "GraphQLAPIKeyOutput"
-          ],
-          "category": "api",
-          "resourceName": "cocoashield"
+          "resourceName": "DASHBOARD"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -101,35 +85,19 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_cocoashieldPreSignup_deploymentBucketName": {
+    "AMPLIFY_function_DASHBOARDPreSignup_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "cocoashieldPreSignup"
+          "resourceName": "DASHBOARDPreSignup"
         }
       ]
     },
-    "AMPLIFY_function_cocoashieldPreSignup_s3Key": {
+    "AMPLIFY_function_DASHBOARDPreSignup_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "cocoashieldPreSignup"
-        }
-      ]
-    },
-    "AMPLIFY_function_cocoashielde2cdc72d_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "cocoashielde2cdc72d"
-        }
-      ]
-    },
-    "AMPLIFY_function_cocoashielde2cdc72d_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "cocoashielde2cdc72d"
+          "resourceName": "DASHBOARDPreSignup"
         }
       ]
     }

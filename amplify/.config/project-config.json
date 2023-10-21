@@ -2,7 +2,7 @@
   "providers": [
     "awscloudformation"
   ],
-  "projectName": "cocoashield",
+  "projectName": "DASHBOARD",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {

@@ -20,7 +20,7 @@ export declare type ComposantImageFeuilleOverridesProps = {
     "832 34th Ave, Seattle, WA 98122"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type ComposantImageFeuilleProps = React.PropsWithChildren<Partial<FlexProps> & {
-    pHOTO?: any;
+    image?: any;
 } & {
     overrides?: ComposantImageFeuilleOverridesProps | undefined | null;
 }>;

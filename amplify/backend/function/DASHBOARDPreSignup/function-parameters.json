@@ -3,19 +3,19 @@
   "modules": [
     "custom"
   ],
-  "parentResource": "cocoashield",
-  "functionName": "cocoashieldPreSignup",
-  "resourceName": "cocoashieldPreSignup",
+  "parentResource": "DASHBOARD",
+  "functionName": "DASHBOARDPreSignup",
+  "resourceName": "DASHBOARDPreSignup",
   "parentStack": "auth",
   "triggerEnvs": "[]",
   "triggerDir": "/snapshot/amplify-cli/build/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/PreSignup",
   "triggerTemplate": "PreSignup.json.ejs",
   "triggerEventPath": "PreSignup.event.json",
-  "roleName": "cocoashieldPreSignup",
+  "roleName": "DASHBOARDPreSignup",
   "skipEdit": true,
   "permissions": {
     "api": {
-      "cocoashield": [
+      "DASHBOARD": [
         "Mutation"
       ]
     }

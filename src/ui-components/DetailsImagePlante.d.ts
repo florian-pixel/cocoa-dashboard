@@ -17,7 +17,6 @@ export declare type DetailsImagePlanteOverridesProps = {
     "Group 1"?: PrimitiveOverrideProps<ViewProps>;
     "Rectangle 1"?: PrimitiveOverrideProps<ViewProps>;
     Sain?: PrimitiveOverrideProps<TextProps>;
-    "Scann\u00E9 le 12/03/2014"?: PrimitiveOverrideProps<TextProps>;
     "Scann\u00E9 le 12/03/2014 17h14"?: PrimitiveOverrideProps<TextProps>;
     "Agent Op\u00E9rateur :"?: PrimitiveOverrideProps<TextProps>;
     "Coulibaly Aboubacar"?: PrimitiveOverrideProps<TextProps>;
@@ -28,8 +27,6 @@ export declare type DetailsImagePlanteOverridesProps = {
     Envoyer?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type DetailsImagePlanteProps = React.PropsWithChildren<Partial<ViewProps> & {
-    pHOTO?: any;
-} & {
     overrides?: DetailsImagePlanteOverridesProps | undefined | null;
 }>;
 export default function DetailsImagePlante(props: DetailsImagePlanteProps): React.ReactElement;

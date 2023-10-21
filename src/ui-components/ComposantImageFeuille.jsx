@@ -9,7 +9,7 @@ import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Image, Text, View } from "@aws-amplify/ui-react";
 export default function ComposantImageFeuille(props) {
-  const { pHOTO, overrides, ...rest } = props;
+  const { image, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -36,7 +36,7 @@ export default function ComposantImageFeuille(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         objectFit="cover"
-        src={pHOTO?.src}
+        src={image?.imagePath}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
@@ -76,7 +76,7 @@ export default function ComposantImageFeuille(props) {
             left="0px"
             borderRadius="10px"
             padding="0px 0px 0px 0px"
-            backgroundColor={pHOTO?.isSafe == true ? "green" : "red"}
+            backgroundColor="rgba(217,217,217,1)"
             {...getOverrideProps(overrides, "Rectangle 1")}
           ></View>
           <Text
@@ -99,7 +99,7 @@ export default function ComposantImageFeuille(props) {
             left="6px"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={pHOTO?.isSafe == true ? "Sain" : "Infect\u00E9"}
+            children={image?.isSafe == true ? "Sain" : "Infect\u00E9"}
             {...getOverrideProps(overrides, "Sain")}
           ></Text>
         </Flex>
@@ -135,7 +135,7 @@ export default function ComposantImageFeuille(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={pHOTO?.scannedAt}
+            children={image?.nom}
             {...getOverrideProps(overrides, "Nom d\u2019image")}
           ></Text>
           <Text
@@ -157,7 +157,9 @@ export default function ComposantImageFeuille(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={pHOTO?.name}
+            children={
+              image?.scannedAt != "null" ? image?.scannedAt : image?.createdAt
+            }
             {...getOverrideProps(overrides, "832 34th Ave, Seattle, WA 98122")}
           ></Text>
         </Flex>

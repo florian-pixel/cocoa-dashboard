@@ -3,8 +3,8 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "cocoas02cb9208",
-    "userPoolName": "cocoashield",
+    "resourceNameTruncated": "dashbo67941f91",
+    "userPoolName": "DASHBOARD",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -33,10 +33,10 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "cocoas02cb9208_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "DASHBO67941f91_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "02cb9208",
-    "resourceName": "cocoashield",
+    "sharedId": "67941f91",
+    "resourceName": "DASHBOARD",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
     "usernameAttributes": [
@@ -66,7 +66,7 @@
     "dependsOn": [
       {
         "category": "function",
-        "resourceName": "cocoashieldPreSignup",
+        "resourceName": "DASHBOARDPreSignup",
         "triggerProvider": "Cognito",
         "attributes": [
           "Arn",
@@ -84,6 +84,6 @@
       "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PreSignUp\",\n    \"lambdaFunctionName\": \"cocoashieldPreSignup\"\n  }\n]"
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PreSignUp\",\n    \"lambdaFunctionName\": \"DASHBOARDPreSignup\"\n  }\n]"
   }
 }

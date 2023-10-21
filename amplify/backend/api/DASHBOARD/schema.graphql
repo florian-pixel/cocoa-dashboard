@@ -9,6 +9,9 @@ type Plantation @model @auth(rules: [{allow: public}]) {
   lib: String
   images: [Image] @hasMany(indexName: "byPlantation", fields: ["id"])
   userId: ID! @index(name: "byUser")
+  superficie: String
+  nombreArbre: String
+  nombreInfectes: String
 }
 
 type Image @model @auth(rules: [{allow: public}]) {
@@ -19,6 +22,7 @@ type Image @model @auth(rules: [{allow: public}]) {
   isSafe: Boolean
   imagePath: String
   createdAt: AWSDateTime
-  coordinates: String
+  agentOperateur: String
   plantationId: ID! @index(name: "byPlantation")
-}
+  coordinates: String
+} 

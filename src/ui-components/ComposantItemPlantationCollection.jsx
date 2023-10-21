@@ -6,14 +6,14 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { listPHOTOS } from "../graphql/queries";
-import StandardCard from "./StandardCard";
+import { listPlantations } from "../graphql/queries";
+import ComposantItemPlantation from "./ComposantItemPlantation";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Collection, Pagination, Placeholder } from "@aws-amplify/ui-react";
 import { API } from "aws-amplify";
 const nextToken = {};
 const apiCache = {};
-export default function StandardCardCollection(props) {
+export default function ComposantItemPlantationCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const [pageIndex, setPageIndex] = React.useState(1);
   const [hasMorePages, setHasMorePages] = React.useState(true);
@@ -54,10 +54,10 @@ export default function StandardCardCollection(props) {
       }
       const result = (
         await API.graphql({
-          query: listPHOTOS.replaceAll("__typename", ""),
+          query: listPlantations.replaceAll("__typename", ""),
           variables,
         })
-      ).data.listPHOTOS;
+      ).data.listPlantations;
       newCache.push(...result.items);
       newNext = result.nextToken;
     }
@@ -80,16 +80,15 @@ export default function StandardCardCollection(props) {
     <div>
       <Collection
         type="grid"
-        isSearchable={true}
-        searchPlaceholder="Recherche"
-        templateColumns="1fr 1fr 1fr"
+        searchPlaceholder="Search..."
+        templateColumns="1fr 1fr"
         autoFlow="row"
-        alignItems="center"
+        alignItems="stretch"
         justifyContent="stretch"
         itemsPerPage={pageSize}
         isPaginated={!isApiPagination && isPaginated}
         items={itemsProp || (loading ? new Array(pageSize).fill({}) : items)}
-        {...getOverrideProps(overrides, "StandardCardCollection")}
+        {...getOverrideProps(overrides, "ComposantItemPlantationCollection")}
         {...rest}
       >
         {(item, index) => {
@@ -97,14 +96,11 @@ export default function StandardCardCollection(props) {
             return <Placeholder key={index} size="large" />;
           }
           return (
-            <StandardCard
-              pHOTO={item}
-              height="auto"
-              width="auto"
-              margin="0 3px 0 0px"
+            <ComposantItemPlantation
+              plantation={item}
               key={item.id}
               {...(overrideItems && overrideItems({ item, index }))}
-            ></StandardCard>
+            ></ComposantItemPlantation>
           );
         }}
       </Collection>
